@@ -9,3 +9,5 @@ export interface IUser {
   createdAt: Date | string;
   updatedAt: Date | string;
 }
+
+export type IRegisterUser = Pick<IUser, "fullname" | "email" | "password">;

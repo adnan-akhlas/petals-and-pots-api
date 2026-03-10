@@ -3,11 +3,12 @@ import "dotenv/config";
 interface IENV {
   PORT: string;
   MONGO_URL: string;
+  BCRYPT_SALT: string;
 }
 
 type KEY_ENV = keyof IENV;
 
-const REQUIRED_ENV: KEY_ENV[] = ["PORT", "MONGO_URL"];
+const REQUIRED_ENV: KEY_ENV[] = ["PORT", "MONGO_URL", "BCRYPT_SALT"];
 
 const checkEnv = (): IENV => {
   const env = {} as IENV;
