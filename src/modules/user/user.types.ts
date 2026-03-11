@@ -5,6 +5,7 @@ export interface IUser {
   fullname: string;
   email: string;
   password: string;
+  imageUrl: string | null;
   isAdmin: boolean;
   createdAt: Date | string;
   updatedAt: Date | string;

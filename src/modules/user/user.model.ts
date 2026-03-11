@@ -17,6 +17,11 @@ const userSchema = new Schema<IUser>(
       type: String,
       required: true,
     },
+    imageUrl: {
+      type: String,
+      nullable: true,
+      default: null,
+    },
     isAdmin: {
       type: Boolean,
       default: false,

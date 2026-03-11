@@ -5,13 +5,14 @@ import httpStatus from "http-status-codes";
 import * as userService from "./user.service";
 
 const registerUser = catchAsync(async (req: Request, res: Response) => {
-  const body = req.body;
-  const data = await userService.insertUserIntoDb(body);
+  console.log("files", req.file);
+  console.log("body", req.body);
+  // const data = await userService.insertUserIntoDb(body);
   sendResponse(res, {
     status: httpStatus.CREATED,
     success: true,
     message: "User registered successfully.",
-    data,
+    data: null,
   });
 });
 
