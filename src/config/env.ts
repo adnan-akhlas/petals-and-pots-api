@@ -4,11 +4,21 @@ interface IENV {
   PORT: string;
   MONGO_URL: string;
   BCRYPT_SALT: string;
+  CLOUDINARY_CLOUD_NAME: string;
+  CLOUDINARY_API_KEY: string;
+  CLOUDINARY_API_SECRET: string;
 }
 
 type KEY_ENV = keyof IENV;
 
-const REQUIRED_ENV: KEY_ENV[] = ["PORT", "MONGO_URL", "BCRYPT_SALT"];
+const REQUIRED_ENV: KEY_ENV[] = [
+  "PORT",
+  "MONGO_URL",
+  "BCRYPT_SALT",
+  "CLOUDINARY_CLOUD_NAME",
+  "CLOUDINARY_API_KEY",
+  "CLOUDINARY_API_SECRET",
+];
 
 const checkEnv = (): IENV => {
   const env = {} as IENV;
