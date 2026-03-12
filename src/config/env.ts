@@ -2,6 +2,7 @@ import "dotenv/config";
 
 interface IENV {
   PORT: string;
+  NODE_ENV: string;
   MONGO_URL: string;
   BCRYPT_SALT: string;
   CLOUDINARY_CLOUD_NAME: string;
@@ -13,6 +14,7 @@ type KEY_ENV = keyof IENV;
 
 const REQUIRED_ENV: KEY_ENV[] = [
   "PORT",
+  "NODE_ENV",
   "MONGO_URL",
   "BCRYPT_SALT",
   "CLOUDINARY_CLOUD_NAME",
