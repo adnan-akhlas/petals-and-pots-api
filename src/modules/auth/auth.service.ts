@@ -4,6 +4,7 @@ import jwt, { SignOptions } from "jsonwebtoken";
 import env from "../../config/env";
 import { User } from "../user/user.model";
 import { TUserLogin } from "./auth.types";
+import { getJwtToken } from "../../utils/jwt";
 
 const loginUser = async (userInfo: TUserLogin): Promise<string> => {
   const user = await User.findOne({ email: userInfo.email });
@@ -20,9 +21,11 @@ const loginUser = async (userInfo: TUserLogin): Promise<string> => {
     isAdmin: user.isAdmin,
   };
 
-  const token = `Bearer ${jwt.sign(userToken, env.JWT_ACCESS_SECRET, {
-    expiresIn: env.JWT_ACCESS_EXPIRED,
-  } as SignOptions)}`;
+  const token = getJwtToken(
+    userToken,
+    env.JWT_ACCESS_SECRET,
+    env.JWT_ACCESS_EXPIRED,
+  );
 
   return token;
 };
