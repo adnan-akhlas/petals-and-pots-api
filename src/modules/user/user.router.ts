@@ -4,7 +4,7 @@ import upload from "../../config/multer";
 import validateZodSchema from "../../middlewares/validateZodSchema";
 import { registerUserZodSchema } from "./user.zod";
 
-const router = Router();
+const router: Router = Router();
 
 router.get("/:email", userController.getUser);
 router.post(
@@ -14,4 +14,4 @@ router.post(
   userController.registerUser,
 );
 
-export const userRouter: Router = router;
+export { router as userRouter };

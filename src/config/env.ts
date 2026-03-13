@@ -8,6 +8,8 @@ interface IENV {
   CLOUDINARY_CLOUD_NAME: string;
   CLOUDINARY_API_KEY: string;
   CLOUDINARY_API_SECRET: string;
+  JWT_ACCESS_SECRET: string;
+  JWT_ACCESS_EXPIRED: string;
 }
 
 type KEY_ENV = keyof IENV;
@@ -20,6 +22,8 @@ const REQUIRED_ENV: KEY_ENV[] = [
   "CLOUDINARY_CLOUD_NAME",
   "CLOUDINARY_API_KEY",
   "CLOUDINARY_API_SECRET",
+  "JWT_ACCESS_SECRET",
+  "JWT_ACCESS_EXPIRED",
 ];
 
 const checkEnv = (): IENV => {
