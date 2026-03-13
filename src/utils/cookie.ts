@@ -7,3 +7,11 @@ export function setCookie(res: Response, name: string, value: string): void {
     sameSite: "none",
   });
 }
+
+export function clearCookie(res: Response, name: string): void {
+  res.clearCookie(name, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+}
